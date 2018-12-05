@@ -5,6 +5,8 @@
 #ifndef DEBROINPROJECT_GENERALCLASSES_H
 #define DEBROINPROJECT_GENERALCLASSES_H
 
+#include <vector>
+using namespace std;
 
 class Series{
 public:
@@ -14,6 +16,6 @@ public:
     int power2;
     Series(int length, int power2):seire(vector<bool>(length, false)),marking_flag(false), power2{power2}{};
     vector<Series> CalcUpperComplexity();
-    bool CheckNSubSeiresUniqeness(int n=power2);
+    bool CheckNSubSeiresUniqeness(int n);
 };
 #endif //DEBROINPROJECT_GENERALCLASSES_H

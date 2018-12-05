@@ -24,10 +24,8 @@ class ComplexityRes{
 
 
 void UpgradeSequencesComplexity(vector<Series> seires){
-
-};
+}
 
 SearchResult ClacPrimitive(int n){
-
-
+    return SearchResult();
 }

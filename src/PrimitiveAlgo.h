@@ -10,7 +10,7 @@
 #include "GeneralClasses.h"
 
 class ComplexityRes;
-class class SearchResult;
+class SearchResult;
 
 
 #endif //PROJECT_PRIMITIVEALGO_H
