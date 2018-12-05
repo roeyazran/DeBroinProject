@@ -4,6 +4,7 @@
 
 #include "PrimitiveAlgo.h"
 #include <vector>
+#include "GeneralClasses.h"
 using  namespace std;
 
 class SearchResult {
@@ -22,18 +23,7 @@ class ComplexityRes{
 
 
 
-bool IsDeborin(vector<bool>& sequence){
-
-
-};
-
-
-bool IsTuvi(bool& sequence){
-
-};
-
-
-void UpgradeSequencesComplexity(sequence){
+void UpgradeSequencesComplexity(vector<Series> seires){
 
 };
 

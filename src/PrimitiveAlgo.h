@@ -6,7 +6,11 @@
 #define PROJECT_PRIMITIVEALGO_H
 
 
+#include <vector>
+#include "GeneralClasses.h"
 
+class ComplexityRes;
+class class SearchResult;
 
 
 #endif //PROJECT_PRIMITIVEALGO_H
