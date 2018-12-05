@@ -65,7 +65,7 @@ CMAKE_BINARY_DIR = C:\Users\roei_\Desktop\DeBroinProject\src\cmake-build-debug
 CMakeFiles/DeBroin.dir/all:
 	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/depend
 	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\roei_\Desktop\DeBroinProject\src\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target DeBroin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\roei_\Desktop\DeBroinProject\src\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target DeBroin"
 .PHONY : CMakeFiles/DeBroin.dir/all
 
 # Include target in all.
@@ -75,7 +75,7 @@ all: CMakeFiles/DeBroin.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DeBroin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\roei_\Desktop\DeBroinProject\src\cmake-build-debug\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\roei_\Desktop\DeBroinProject\src\cmake-build-debug\CMakeFiles 4
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/DeBroin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\roei_\Desktop\DeBroinProject\src\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/DeBroin.dir/rule

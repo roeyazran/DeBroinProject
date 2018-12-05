@@ -122,35 +122,86 @@ DeBroin/fast:
 	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/build
 .PHONY : DeBroin/fast
 
+GeneralClasses.obj: GeneralClasses.cc.obj
+
+.PHONY : GeneralClasses.obj
+
 # target to build an object file
-PrimitiveAlgo.obj:
-	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/PrimitiveAlgo.obj
+GeneralClasses.cc.obj:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/GeneralClasses.cc.obj
+.PHONY : GeneralClasses.cc.obj
+
+GeneralClasses.i: GeneralClasses.cc.i
+
+.PHONY : GeneralClasses.i
+
+# target to preprocess a source file
+GeneralClasses.cc.i:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/GeneralClasses.cc.i
+.PHONY : GeneralClasses.cc.i
+
+GeneralClasses.s: GeneralClasses.cc.s
+
+.PHONY : GeneralClasses.s
+
+# target to generate assembly for a file
+GeneralClasses.cc.s:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/GeneralClasses.cc.s
+.PHONY : GeneralClasses.cc.s
+
+PrimitiveAlgo.obj: PrimitiveAlgo.cc.obj
+
 .PHONY : PrimitiveAlgo.obj
 
-# target to preprocess a source file
-PrimitiveAlgo.i:
-	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/PrimitiveAlgo.i
+# target to build an object file
+PrimitiveAlgo.cc.obj:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/PrimitiveAlgo.cc.obj
+.PHONY : PrimitiveAlgo.cc.obj
+
+PrimitiveAlgo.i: PrimitiveAlgo.cc.i
+
 .PHONY : PrimitiveAlgo.i
 
-# target to generate assembly for a file
-PrimitiveAlgo.s:
-	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/PrimitiveAlgo.s
+# target to preprocess a source file
+PrimitiveAlgo.cc.i:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/PrimitiveAlgo.cc.i
+.PHONY : PrimitiveAlgo.cc.i
+
+PrimitiveAlgo.s: PrimitiveAlgo.cc.s
+
 .PHONY : PrimitiveAlgo.s
 
-# target to build an object file
-main.obj:
-	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/main.obj
+# target to generate assembly for a file
+PrimitiveAlgo.cc.s:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/PrimitiveAlgo.cc.s
+.PHONY : PrimitiveAlgo.cc.s
+
+main.obj: main.cpp.obj
+
 .PHONY : main.obj
 
-# target to preprocess a source file
-main.i:
-	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/main.i
+# target to build an object file
+main.cpp.obj:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/main.cpp.obj
+.PHONY : main.cpp.obj
+
+main.i: main.cpp.i
+
 .PHONY : main.i
 
-# target to generate assembly for a file
-main.s:
-	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/main.s
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
 .PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -161,6 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... DeBroin
 	@echo ... rebuild_cache
+	@echo ... GeneralClasses.obj
+	@echo ... GeneralClasses.i
+	@echo ... GeneralClasses.s
 	@echo ... PrimitiveAlgo.obj
 	@echo ... PrimitiveAlgo.i
 	@echo ... PrimitiveAlgo.s
