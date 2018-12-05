@@ -3,11 +3,12 @@
 //
 
 #include "PrimitiveAlgo.h"
-#include <std::vector>
+#include <vector>
+using  namespace std::vector;
 
 class SearchResult {
     int n; //serie parameter
-    Vector<ComplexityRes> ComplexitiesVector;
+    vector<ComplexityRes> ComplexitiesVector;
 };
 
 class ComplexityRes{
@@ -15,11 +16,11 @@ class ComplexityRes{
     float OverallCounter;
     float DebroienCounter;
     float ToviCounter;
-    Vector<bool*> DebroienSequenceVector;
-    Vector<bool*> TuviSequenceVector;
+    vector<bool*> DebroienSequenceVector;
+    vector<bool*> TuviSequenceVector;
 };
 
-bool IsDeborin(bool& sequence){
+bool IsDeborin(vector<bool>& sequence){
 
 };
 
@@ -34,6 +35,6 @@ void UpgradeSequencesComplexity(sequence){
 };
 
 SearchResult ClacPrimitive(int n){
-    
+
 
 }

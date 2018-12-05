@@ -1,2 +1,3 @@
-/Users/saarhuberman/Documents/technion/semester7/DeBroinProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/saarhuberman/Documents/technion/semester7/DeBroinProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/roei_/Desktop/DeBroinProject/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/roei_/Desktop/DeBroinProject/src/cmake-build-debug/CMakeFiles/DeBroin.dir
+C:/Users/roei_/Desktop/DeBroinProject/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
