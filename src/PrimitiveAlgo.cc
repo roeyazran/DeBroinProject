@@ -4,7 +4,7 @@
 
 #include "PrimitiveAlgo.h"
 #include <vector>
-using  namespace std::vector;
+using  namespace std;
 
 class SearchResult {
     int n; //serie parameter
@@ -20,7 +20,10 @@ class ComplexityRes{
     vector<bool*> TuviSequenceVector;
 };
 
+
+
 bool IsDeborin(vector<bool>& sequence){
+
 
 };
 
