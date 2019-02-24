@@ -6,7 +6,7 @@
 bool Series::CheckNSubSeiresUniqeness(int n){
     //vector<vector<bool> > PossibleSeiries (n, vector<bool>(pow(n)));
     vector<bool> PossibleSeiries(Get2Power(n),false);
-    for (int i=0; i<=length;++i){
+    for (int i=0; i<length;++i){
         int DecRepresentation = ParseBoolArrToInt(series,n,i);
 
         if(PossibleSeiries[DecRepresentation]){
@@ -14,7 +14,7 @@ bool Series::CheckNSubSeiresUniqeness(int n){
         }
         PossibleSeiries[DecRepresentation] = true;
     }
-    return false;
+    return true;
 
 }
 
@@ -24,11 +24,11 @@ int Get2Power(int n){
 
 int ParseBoolArrToInt(vector<bool> arr, unsigned int size, unsigned int offset){
     int res=0;
-    for (unsigned int i = offset; i < size; ++i) {
+    for (unsigned int j=0, i = offset; j < size; ++j,++i) {
         if( i < arr.size()){
-            res+=Get2Power(i)*arr[i];
+            res+=Get2Power(j)*arr[i];
         } else{
-            res+=Get2Power(i-arr.size())*arr[i-arr.size()];
+            res+=Get2Power(j)*arr[i-arr.size()];
         }
     }
     return res;

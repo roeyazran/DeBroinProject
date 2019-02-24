@@ -9,11 +9,11 @@ using namespace std;
 
 
 int main(int argc, char** argv){
-    vector<bool> testVec(4, false);
+    vector<bool> testVec(8, false);
     testVec[2]=1;
     testVec[1]=1;
     Series testSeries(4,2,testVec);
     cout<<testSeries;
-    cout<< "Deboin test: " << testSeries.CheckNSubSeiresUniqeness(2);
+    cout<< "Debroin test: " << testSeries.CheckNSubSeiresUniqeness(2);
     return 0;
 }

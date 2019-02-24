@@ -23,9 +23,12 @@ class ComplexityRes{
 
 
 
-void UpgradeSequencesComplexity(vector<Series> seires){
+void UpgradeSequencesComplexity(vector<Series> series){
 }
 
 SearchResult ClacPrimitive(int n){
+    //Creating basic seires - complexity 0
+    vector<bool> testVec(n, false);
+
     return SearchResult();
 }
