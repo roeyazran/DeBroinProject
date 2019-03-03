@@ -20,6 +20,8 @@ public:
 //    vector<bool*> TuviSequenceVector;
 };
 
+set<Series> UpgradeSequencesComplexity(set<Series> series);
+
 class SearchResult {
 public:
     int n; //series parameter
