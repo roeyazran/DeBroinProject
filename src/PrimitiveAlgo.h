@@ -12,5 +12,5 @@
 class ComplexityRes;
 class SearchResult;
 
-
+set<Series> UpgradeSequencesComplexity(set<Series> series);
 #endif //PROJECT_PRIMITIVEALGO_H
