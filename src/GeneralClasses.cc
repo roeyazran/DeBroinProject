@@ -3,7 +3,7 @@
 //
 #include "GeneralClasses.h"
 
-bool Series::CheckNSubSeiresUniqeness(int n){
+bool Series::CheckNSubSeiresUniquness(int n)const{
     //vector<vector<bool> > PossibleSeiries (n, vector<bool>(pow(n)));
     vector<bool> PossibleSeiries(Get2Power(n),false);
     for (int i=0; i<length;++i){
@@ -21,12 +21,23 @@ bool Series::CheckNSubSeiresUniqeness(int n){
 set<Series> Series::CalcUpperComplexity() const{
     vector<bool> series_0(this->length, false);
     vector<bool> series_1(this->length, true);
+    bool insetBoth = true;
     for(int i=1; i < this->length; i++){
         series_0[i] = this->series[i-1] ^ series_0[i-1];
         series_1[i] = this->series[i-1] ^ series_1[i-1];
     }
-    Series Series_obj_0(this->length, this->power2, series_0);
-    Series Series_obj_1(this->length, this->power2, series_1);
+
+    vector<bool> compareVec = series_0;
+    shift_vector(compareVec);
+    for (int j = 0; j < this->length-2; ++j) {
+        if(compareVec == series_1)
+            insetBoth = false;
+        shift_vector(compareVec);
+    }
+
+    Series Series_obj_0(this->length, series_0, this->complexity+1);
+    Series Series_obj_1(this->length, series_1,this->complexity+1);
+
 
 
 //    set<Series> UpperComplexity;
@@ -39,7 +50,8 @@ set<Series> Series::CalcUpperComplexity() const{
 //    }
     set<Series> UpperComplexity;
     UpperComplexity.insert(Series_obj_0);
-    UpperComplexity.insert(Series_obj_1);
+    if(insetBoth)
+        UpperComplexity.insert(Series_obj_1);
     set<Series>::iterator it = UpperComplexity.begin();
 //    while(it != UpperComplexity.end()){
 //        cout << *it;
@@ -54,10 +66,7 @@ int Series::GetComplexity() const{
     int complexiy = 1;
     while(series_vec != all_1_vec){
         vector<bool> shifted_vec = series_vec;
-        vector<bool>::iterator it = shifted_vec.begin();
-        bool shifted_val = *it;
-        shifted_vec.erase(it);
-        shifted_vec.push_back(shifted_val);
+        shift_vector(shifted_vec);
         vector<bool>::iterator it1 = series_vec.begin();
         vector<bool>::iterator it2 = shifted_vec.begin();
         while(it1 != series_vec.end()){
@@ -71,6 +80,12 @@ int Series::GetComplexity() const{
     return complexiy;
 }
 
+void shift_vector(vector<bool> &shifted_vec){
+    vector<bool>::iterator it = shifted_vec.begin();
+    bool shifted_val = *it;
+    shifted_vec.erase(it);
+    shifted_vec.push_back(shifted_val);
+}
 
 int Get2Power(int n){
     return 1<<n;
@@ -91,9 +106,8 @@ int ParseBoolArrToInt(vector<bool> arr, unsigned int size, unsigned int offset){
 ostream& Series::PrintSeriesInfo(ostream& os) const{
     os<<"Printing Series info:"<<endl;
     PrintVector(os,series);
-    os<<"Mark Flag: "<<marking_flag<<endl;
-    os<<"length: "<< length<<endl;
-    os<<"power of 2 length:"<<power2<<endl;
+    // os<<"length: "<< length<<endl;
+    //os<<"power of 2 length:"<<power2<<endl;
     return os;
 }
 

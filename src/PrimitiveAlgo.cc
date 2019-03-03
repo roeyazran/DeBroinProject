@@ -33,29 +33,59 @@ SearchResult ClacPrimitive(int n){
     SearchResult result(n);
 
 
-    //Creating basic seires - complexity 0
-    vector<bool> zeroVec(n, false);
-    Series BaseSeries(Get2Power(n),n,zeroVec);
+    //Creating base series os 2^n 1's vector
+    Series BaseSeries(Get2Power(n));
 
-    //Creating Series Vector (contains all possible vectors of the same complexity)
-    vector<Series> SeriesVector;
-    SeriesVector.push_back(BaseSeries);
-    int Complexity = 0;
-    while (SeriesVector.size() != 0){
-
+    //Creating Series Set (contains all the possible vectors of the same complexity)
+    set<Series> SeriesSet;
+    SeriesSet.insert(BaseSeries);
+    int Complexity = 1;
+    while (Complexity <= Get2Power(n)){
         //iterating through all series of this complexity
-        vector<Series>::iterator it = SeriesVector.begin();
-        while (it!= SeriesVector.end()){
+        set<Series>::iterator it = SeriesSet.begin();
+        while (it!= SeriesSet.end()){
             result.ComplexitiesVector[Complexity].OverallCounter++;
-            if((*it).CheckNSubSeiresUniqeness(n+1)){
+            if((*it).CheckNSubSeiresUniquness(n+1)){
                 result.ComplexitiesVector[Complexity].TuviCounter++;
-                if((*it).CheckNSubSeiresUniqeness(n)){
-                    result.ComplexitiesVector[Complexity].DebroienCounter++;                }
+                result.ComplexitiesVector[Complexity].TuviSequencesVector.push_back((*it).series);
+                if((*it).CheckNSubSeiresUniquness(n)){
+                    result.ComplexitiesVector[Complexity].DebroienCounter++;
+                    result.ComplexitiesVector[Complexity].DebroienSequencesVector.push_back((*it).series);
+                }
             }
             it++;
         }
+        if(Complexity < Get2Power(n))
+            SeriesSet = UpgradeSequencesComplexity(SeriesSet);
         Complexity++;
-        UpgradeSequencesComplexity(SeriesVector);
     }
     return result;
+}
+
+ostream& operator<<(ostream& os, vector<bool>& var){
+    for (unsigned int i = 0; i < var.size() ; ++i) {
+        os << var[i];
+    }
+    return os;
+}
+
+ostream& operator<<(ostream& os, SearchResult& result){
+    os << "Search Result fon n parameter = " << result.n<<std::endl;
+    for (unsigned int i = 0; i < result.ComplexitiesVector.size(); ++i) {
+        os << "Complexity = " << i << "; Number of Series: " << result.ComplexitiesVector[i].OverallCounter <<
+           ";   Number of De-Broien Series:" << result.ComplexitiesVector[i].DebroienCounter << ";   Number of semi De-Broien Series:" <<
+           result.ComplexitiesVector[i].TuviCounter << std::endl << std::endl;
+        cout<< " Debroin series: " << endl;
+        for (unsigned int j = 0; j < result.ComplexitiesVector[i].DebroienSequencesVector.size() ; ++j) {
+            cout<< result.ComplexitiesVector[i].DebroienSequencesVector[j] << endl;
+        }
+
+        cout<< " Tuvi series: " << endl;
+        for (unsigned int j = 0; j < result.ComplexitiesVector[i].TuviSequencesVector.size() ; ++j) {
+            cout<< result.ComplexitiesVector[i].TuviSequencesVector[j] << endl;
+        }
+    }
+
+    os<< endl << endl;
+    return os;
 }

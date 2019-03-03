@@ -16,8 +16,8 @@ public:
     float OverallCounter;
     float DebroienCounter;
     float TuviCounter;
-//    vector<bool*> DebroienSequenceVector;
-//    vector<bool*> TuviSequenceVector;
+    vector<vector<bool>> DebroienSequencesVector;
+    vector<vector<bool>> TuviSequencesVector;
 };
 
 set<Series> UpgradeSequencesComplexity(set<Series> series);
@@ -26,16 +26,20 @@ class SearchResult {
 public:
     int n; //series parameter
     vector<ComplexityRes> ComplexitiesVector;
-    SearchResult(int n):n(n),ComplexitiesVector(vector<ComplexityRes>(n)){};
+    SearchResult(int n):n(n),ComplexitiesVector(vector<ComplexityRes>(Get2Power(n)+1)){
+        ComplexitiesVector[0].DebroienCounter=0;
+        ComplexitiesVector[0].TuviCounter=0;
+        ComplexitiesVector[0].OverallCounter=1;
+        for(int i =0; i< n+1 ;++i){
+            ComplexitiesVector[i].Complexity=i;
+        }
+    };
 };
 
-ostream& operator<<(ostream& os, SearchResult& result){
-    os << "Search Result fon n parameter = " << result.n<<std::endl;
-    for (int i = 0; i < result.ComplexitiesVector.size(); ++i) {
-        os << "Complexity = " << i << "Number of Series: " << result.ComplexitiesVector[i].OverallCounter <<
-           " Number of De-Broien Series:" << result.ComplexitiesVector[i].DebroienCounter << " Number of semi De-Broien Series:" <<
-           result.ComplexitiesVector[i].TuviCounter << std::endl << std::endl;
-    }
-}
+ostream& operator<<(ostream& os, SearchResult& result);
+
+ostream& operator<<(ostream& os, vector<bool>& var);
+
+SearchResult ClacPrimitive(int n);
 
 #endif //PROJECT_PRIMITIVEALGO_H

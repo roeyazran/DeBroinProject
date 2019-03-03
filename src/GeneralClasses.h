@@ -13,12 +13,15 @@ using namespace std;
 class Series{
 public:
     vector<bool> series;
-    bool marking_flag;
     int length;
     int power2;
-    Series(int length, int power2):series(vector<bool>(length, true)),marking_flag(false),length(length), power2{power2}{};
-    Series(int length, int power2, vector<bool> series):series(series),marking_flag(false),length(length), power2{power2}{};
-    bool CheckNSubSeiresUniqeness(int n);
+    unsigned int complexity;
+    Series(int length):series(vector<bool>(length, true)), length(length), power2(log2(length)), complexity(1){};
+    Series(int length, vector<bool> series):series(series),length(length), power2(log2(length)){
+        complexity=GetComplexity();
+    };
+    Series(int length, vector<bool> series, unsigned int complex):series(series),length(length), power2(log2(length)), complexity(complex){};
+    bool CheckNSubSeiresUniquness(int n) const;
     set<Series> CalcUpperComplexity() const;
     ostream& PrintSeriesInfo(ostream& os) const;
     int GetComplexity() const;
@@ -32,6 +35,6 @@ int ParseBoolArrToInt(vector<bool> arr, unsigned int size, unsigned int offset);
 ostream& operator<<(ostream& os, const Series& series);
 
 void PrintVector(ostream& os , vector<bool> vec);
-
+void shift_vector(vector<bool> &shifted_vec);
 
 #endif //DEBROINPROJECT_GENERALCLASSES_H
