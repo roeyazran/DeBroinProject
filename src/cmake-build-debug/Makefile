@@ -122,6 +122,33 @@ DeBroin/fast:
 	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/build
 .PHONY : DeBroin/fast
 
+DeBrujinGraph.obj: DeBrujinGraph.cc.obj
+
+.PHONY : DeBrujinGraph.obj
+
+# target to build an object file
+DeBrujinGraph.cc.obj:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/DeBrujinGraph.cc.obj
+.PHONY : DeBrujinGraph.cc.obj
+
+DeBrujinGraph.i: DeBrujinGraph.cc.i
+
+.PHONY : DeBrujinGraph.i
+
+# target to preprocess a source file
+DeBrujinGraph.cc.i:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/DeBrujinGraph.cc.i
+.PHONY : DeBrujinGraph.cc.i
+
+DeBrujinGraph.s: DeBrujinGraph.cc.s
+
+.PHONY : DeBrujinGraph.s
+
+# target to generate assembly for a file
+DeBrujinGraph.cc.s:
+	$(MAKE) -f CMakeFiles\DeBroin.dir\build.make CMakeFiles/DeBroin.dir/DeBrujinGraph.cc.s
+.PHONY : DeBrujinGraph.cc.s
+
 GeneralClasses.obj: GeneralClasses.cc.obj
 
 .PHONY : GeneralClasses.obj
@@ -212,6 +239,9 @@ help:
 	@echo ... edit_cache
 	@echo ... DeBroin
 	@echo ... rebuild_cache
+	@echo ... DeBrujinGraph.obj
+	@echo ... DeBrujinGraph.i
+	@echo ... DeBrujinGraph.s
 	@echo ... GeneralClasses.obj
 	@echo ... GeneralClasses.i
 	@echo ... GeneralClasses.s

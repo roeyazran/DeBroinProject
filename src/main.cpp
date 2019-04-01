@@ -5,6 +5,7 @@
 #include <vector>
 #include "GeneralClasses.h"
 #include "PrimitiveAlgo.h"
+#include "DeBrujinGraph.h"
 using namespace std;
 //set<Series>::iterator it = set_of_upper.begin();
 //while(it != set_of_upper.end()){
@@ -14,7 +15,9 @@ using namespace std;
 
 
 int main(int argc, char** argv){
-    SearchResult res = ClacPrimitive(4);
-    cout << res;
+    DeBrujinGraph<ssize_t (4)> Db;
+    int i=0;
+    //    SearchResult res = ClacPrimitive(4);
+//    cout << res;
     return 0;
 }
