@@ -28,8 +28,8 @@ class DeBrujinGraph {
         for (unsigned long i = 0; i < pow (2, SubSeqLen-1) ; ++i) {
             unsigned long neighbour0Id= (i<<1);
             unsigned long neighbour1Id= (i<<1) + 1;
-            GraphNode<SubSeqLen-1>* neighbour0 = nodes[neighbour0Id];
-            GraphNode<SubSeqLen-1>* neighbour1 = nodes[neighbour1Id];
+            GraphNode<SubSeqLen-1>* neighbour0 = &nodes[neighbour0Id];
+            GraphNode<SubSeqLen-1>* neighbour1 = &nodes[neighbour1Id];
             nodes[i].AddNeighbour(neighbour0);
             nodes[i].AddNeighbour(neighbour1);
         }
@@ -40,7 +40,7 @@ public:
         for (unsigned long i = 0; i < pow (2, SubSeqLen-1) ; ++i) {
             bitset<SubSeqLen-1> IdBits(i);
 //            GraphNode<SubSeqLen-1>N(IdBits)
-            nodes.push_back(&GraphNode<SubSeqLen-1>(IdBits));
+            nodes.push_back(GraphNode<SubSeqLen-1>(IdBits));
         }
         ConnectNodes();
     };
