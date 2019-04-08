@@ -21,42 +21,18 @@ bool Series::CheckNSubSeiresUniquness(int n)const{
 set<Series> Series::CalcUpperComplexity() const{
     vector<bool> series_0(this->length, false);
     vector<bool> series_1(this->length, true);
-    bool insetBoth = true;
     for(int i=1; i < this->length; i++){
         series_0[i] = this->series[i-1] ^ series_0[i-1];
         series_1[i] = this->series[i-1] ^ series_1[i-1];
     }
-
-    vector<bool> compareVec = series_0;
-    shift_vector(compareVec);
-    for (int j = 0; j < this->length-2; ++j) {
-        if(compareVec == series_1)
-            insetBoth = false;
-        shift_vector(compareVec);
-    }
-
-    Series Series_obj_0(this->length, series_0, this->complexity+1);
-    Series Series_obj_1(this->length, series_1,this->complexity+1);
-
-
-
-//    set<Series> UpperComplexity;
-//    UpperComplexity.insert(Series_obj_0);
-//    UpperComplexity.insert(Series_obj_1);
-//    set<Series>::iterator it = UpperComplexity.begin();
-//    while(it != UpperComplexity.end()){
-//        cout << *it;
-//        it++;
-//    }
     set<Series> UpperComplexity;
+    Series Series_obj_0(this->length, series_0, this->complexity+1);
     UpperComplexity.insert(Series_obj_0);
-    if(insetBoth)
+
+    if (((complexity) & (complexity-1)) != 0){
+        Series Series_obj_1(this->length, series_1,this->complexity+1);
         UpperComplexity.insert(Series_obj_1);
-    set<Series>::iterator it = UpperComplexity.begin();
-//    while(it != UpperComplexity.end()){
-//        cout << *it;
-//        it++;
-//    }
+    }
     return UpperComplexity;
 }
 

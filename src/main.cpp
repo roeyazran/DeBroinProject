@@ -15,9 +15,11 @@ using namespace std;
 
 
 int main(int argc, char** argv){
-    DeBrujinGraph<ssize_t (4)> Db;
-    int i=0;
-    //    SearchResult res = ClacPrimitive(4);
+
+    SearchResult n5Res =  ClacPrimitive(5);
+    cout << n5Res;
+//    DeBrujinGraph<ssize_t (4)> Db;
+//    int i=0;//    SearchResult res = ClacPrimitive(4);
 //    cout << res;
-    return 0;
+//    return 0;
 }

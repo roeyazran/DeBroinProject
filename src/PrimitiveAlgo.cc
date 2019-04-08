@@ -41,6 +41,7 @@ SearchResult ClacPrimitive(int n){
     SeriesSet.insert(BaseSeries);
     int Complexity = 1;
     while (Complexity <= Get2Power(n)){
+        cout <<"calcing complexcity " << Complexity << endl;
         //iterating through all series of this complexity
         set<Series>::iterator it = SeriesSet.begin();
         while (it!= SeriesSet.end()){
@@ -75,15 +76,15 @@ ostream& operator<<(ostream& os, SearchResult& result){
         os << "Complexity = " << i << "; Number of Series: " << result.ComplexitiesVector[i].OverallCounter <<
            ";   Number of De-Broien Series:" << result.ComplexitiesVector[i].DebroienCounter << ";   Number of semi De-Broien Series:" <<
            result.ComplexitiesVector[i].TuviCounter << std::endl << std::endl;
-        cout<< " Debroin series: " << endl;
-        for (unsigned int j = 0; j < result.ComplexitiesVector[i].DebroienSequencesVector.size() ; ++j) {
-            cout<< result.ComplexitiesVector[i].DebroienSequencesVector[j] << endl;
-        }
-
-        cout<< " Tuvi series: " << endl;
-        for (unsigned int j = 0; j < result.ComplexitiesVector[i].TuviSequencesVector.size() ; ++j) {
-            cout<< result.ComplexitiesVector[i].TuviSequencesVector[j] << endl;
-        }
+//        cout<< " Debroin series: " << endl;
+//        for (unsigned int j = 0; j < result.ComplexitiesVector[i].DebroienSequencesVector.size() ; ++j) {
+//            cout<< result.ComplexitiesVector[i].DebroienSequencesVector[j] << endl;
+//        }
+//
+//        cout<< " Tuvi series: " << endl;
+//        for (unsigned int j = 0; j < result.ComplexitiesVector[i].TuviSequencesVector.size() ; ++j) {
+//            cout<< result.ComplexitiesVector[i].TuviSequencesVector[j] << endl;
+//        }
     }
 
     os<< endl << endl;
